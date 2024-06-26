@@ -1,18 +1,11 @@
 import React from 'react';
 import ServiceCart from '../Cart/ServiceCart';
-
-
-const getServiceData = async () => {
-    const res = await fetch('http://localhost:3000/services/api/get-all')
-    const data = await res.json()
-    // console.log(data);
-    return data
-}
+import { getServiceData } from '@/services/getServiceData';
 
 const Services = async () => {
 
     const services = await getServiceData();
-    console.log(services);
+    // console.log(services);
 
     return (
         <div>
