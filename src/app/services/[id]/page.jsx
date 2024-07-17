@@ -1,9 +1,15 @@
 import FacilityCart from '@/components/Cart/FacilityCart';
 import { getServiceData, getServiceDetails } from '@/services/getServiceData';
 import Image from 'next/image';
+import Link from 'next/link';
 import React from 'react';
-import { FaArrowRight,  } from 'react-icons/fa';
+import { FaArrowRight, } from 'react-icons/fa';
 import { FiFileText } from "react-icons/fi";
+
+export const metadata = {
+    title: 'Services Details',
+    description: 'Services Details Page',
+}
 
 const ServiceDetailsPage = async ({ params }) => {
 
@@ -91,7 +97,7 @@ const ServiceDetailsPage = async ({ params }) => {
                         <h3 className='text-2xl font-bold '>Download</h3>
                         <div className='flex justify-between items-center my-7'>
                             <div className='flex items-center gap-3'>
-                                <FiFileText  className='text-2xl'/>
+                                <FiFileText className='text-2xl' />
                                 <div>
                                     <h1 className='text-lg font-bold'>Our Brochure</h1>
                                     <p className='text-sm text-[#A2A2A2]'>Download</p>
@@ -101,7 +107,7 @@ const ServiceDetailsPage = async ({ params }) => {
                         </div>
                         <div className='flex justify-between items-center'>
                             <div className='flex items-center gap-3'>
-                                <FiFileText  className='text-2xl'/>
+                                <FiFileText className='text-2xl' />
                                 <div>
                                     <h1 className='text-lg font-bold'>Company Details</h1>
                                     <p className='text-sm text-[#A2A2A2]'>Download</p>
@@ -129,7 +135,7 @@ const ServiceDetailsPage = async ({ params }) => {
                     {/* proceed button */}
                     <div>
                         <h3 className='text-4xl font-bold my-7'>Price ${price}</h3>
-                        <button className='btn btn-primary w-full'>Proceed Checkout</button>
+                        <Link href={`/checkout/${_id}`}><button className='btn btn-primary w-full'>Proceed Checkout</button></Link>
                     </div>
                 </div>
             </div>
